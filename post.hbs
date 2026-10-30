@@ -1,0 +1,11 @@
+{{!< default}}
+
+{{#post}}
+  {{> "post-body" single=true}}
+
+  {{#if @site.comments_enabled}}
+    <section id="comments">
+      {{comments title="" count=true}}
+    </section>
+  {{/if}}
+{{/post}}

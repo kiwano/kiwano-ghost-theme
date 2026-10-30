@@ -1,0 +1,20 @@
+{
+  "name": "kiwano",
+  "description": "Quiet, essential, modern. A port of the old kiwano WordPress theme: black, monospace, green.",
+  "version": "1.0.0",
+  "license": "GPL-2.0-or-later",
+  "author": {
+    "name": "Kris Coward",
+    "email": "github@melon.org",
+    "url": "https://kiwano.melon.org/"
+  },
+  "engines": {
+    "ghost": ">=5.0.0"
+  },
+  "keywords": ["ghost-theme"],
+  "config": {
+    "posts_per_page": 10,
+    "card_assets": true,
+    "image_sizes": {}
+  }
+}

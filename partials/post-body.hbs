@@ -1,0 +1,18 @@
+{{!-- One post or page, shown in full. Used by the index, post and page templates. --}}
+<article class="{{post_class}}">
+  {{#if page}}
+    {{#if @page.show_title_and_feature_image}}<h3><a href="{{url}}">{{title}}</a></h3>{{/if}}
+  {{else}}
+    <h3><a href="{{url}}">{{title}}</a></h3>
+  {{/if}}
+  {{#unless page}}<div class="date"><time datetime="{{date format="YYYY-MM-DD"}}">{{date format="YYYY.MM.DD"}}</time></div>{{/unless}}
+
+  <div class="content gh-content">
+    {{content}}
+  </div>
+
+  <div class="info">
+    {{#if tags}}<div class="meta">Tags : {{tags separator="&nbsp;&nbsp;"}}</div>{{/if}}
+    {{#unless single}}{{#if @site.comments_enabled}}<div class="meta"><a href="{{url}}#comments">{{comment_count empty="" singular="comment" plural="comments"}}</a></div>{{/if}}{{/unless}}
+  </div>
+</article>

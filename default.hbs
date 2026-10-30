@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="{{@site.locale}}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{meta_title}}</title>
+  <link rel="preload" href="{{asset "fonts/etl16.woff2"}}" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="{{asset "css/screen.css"}}">
+  {{ghost_head}}
+</head>
+<body class="{{body_class}}">
+
+  <header id="header">
+    <a href="{{@site.url}}" id="blogtitle">
+      {{#if @site.logo}}
+        <img src="{{@site.logo}}" alt="">
+      {{else}}
+        <img src="https://www.gravatar.com/avatar/2164af0ba71f4426428b8bacc4d408fe?s=80" alt="">
+      {{/if}}
+      <span>{{@site.title}}</span>
+    </a>
+    {{#if @site.description}}<div id="tagline">{{@site.description}}</div>{{/if}}
+  </header>
+
+  <div id="layout">
+    <main id="main">
+      {{{body}}}
+    </main>
+
+    <aside id="sidebar">
+      {{#if @site.navigation}}
+        <div class="box">
+          <h4>Pages</h4>
+          {{navigation}}
+        </div>
+      {{/if}}
+
+      {{#get "tags" limit="all" filter="visibility:public" order="name asc"}}
+        {{#if tags}}
+          <div class="box">
+            <h4>Tags</h4>
+            <ul>
+              {{#foreach tags}}<li><a href="{{url}}">{{name}}</a></li>{{/foreach}}
+            </ul>
+          </div>
+        {{/if}}
+      {{/get}}
+
+      {{#get "posts" limit="10" fields="title,url"}}
+        {{#if posts}}
+          <div class="box">
+            <h4>Recent</h4>
+            <ul>
+              {{#foreach posts}}<li><a href="{{url}}">{{title}}</a></li>{{/foreach}}
+            </ul>
+          </div>
+        {{/if}}
+      {{/get}}
+
+      {{#if @site.secondary_navigation}}
+        <div class="box">
+          <h4>Links</h4>
+          {{navigation type="secondary"}}
+        </div>
+      {{/if}}
+
+      <div class="box">
+        <h4>Meta</h4>
+        <ul>
+          <li><a href="{{@site.url}}/ghost/">Site admin</a></li>
+          <li><a href="{{@site.url}}/rss/">Entries RSS</a></li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+
+  <footer id="footer"></footer>
+
+  {{ghost_foot}}
+</body>
+</html>

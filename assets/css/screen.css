@@ -1,0 +1,134 @@
+/* ETL Fixed 16 (Latin-1 + Latin-2); Unifont covers everything else. */
+@font-face {
+  font-family: 'ETL Fixed 16';
+  src: url('../fonts/etl16.woff2') format('woff2');
+  font-display: swap;
+  unicode-range: U+20-7E, U+A0-FF, U+102-107, U+10C-111, U+118-11B, U+139-13A, U+13D-13E, U+141-144, U+147-148, U+150-151, U+154-155, U+158-15B, U+15E-165, U+16E-171, U+179-17E, U+2C7, U+2D8-2D9, U+2DB, U+2DD;
+}
+@font-face {
+  font-family: 'Unifont';
+  src: url('../fonts/unifont-latin.woff2') format('woff2');
+  font-display: swap;
+  unicode-range: U+0-2FF;
+}
+@font-face {
+  font-family: 'Unifont';
+  src: url('../fonts/unifont-scripts.woff2') format('woff2');
+  font-display: swap;
+  unicode-range: U+300-1FFF;
+}
+@font-face {
+  font-family: 'Unifont';
+  src: url('../fonts/unifont-symbols.woff2') format('woff2');
+  font-display: swap;
+  unicode-range: U+2000-2FFF;
+}
+@font-face {
+  font-family: 'Unifont';
+  src: url('../fonts/unifont-cjk.woff2') format('woff2');
+  font-display: swap;
+  unicode-range: U+3000-9FFF;
+}
+@font-face {
+  font-family: 'Unifont';
+  src: url('../fonts/unifont-hangul-misc.woff2') format('woff2');
+  font-display: swap;
+  unicode-range: U+A000-D7FF, U+F900-FDFF, U+FE10-FFFD;
+}
+
+/* ---------------------------------------------------------------------
+   Kiwano: port of the 2009 WordPress theme. Black, grey, green, monospace.
+   The fonts are 16px bitmaps, so sizes stay at multiples of 16px to keep
+   them crisp.
+   --------------------------------------------------------------------- */
+
+:root {
+  --bg: #000;
+  --fg: #c8c8c8;
+  --green: #00c800;
+  --rule: #646464;
+  --font: 'ETL Fixed 16', 'Unifont', monospace;
+}
+
+html { background: var(--bg); }
+
+body {
+  margin: 0;
+  padding: 0 16px;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font);
+  font-size: 16px;
+  line-height: 1.75;
+  -webkit-font-smoothing: none;
+  font-smooth: never;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font);
+  font-weight: normal;
+  font-size: 16px;
+  color: var(--green);
+}
+h1, h2, h3 { font-size: 32px; line-height: 1.25; }
+
+a { color: var(--fg); text-decoration: none; }
+a img { border: none; }
+img { max-width: 100%; height: auto; }
+
+/* Header */
+#header { padding: 8px 9px 24px; }
+#blogtitle { display: inline-flex; align-items: flex-end; gap: 20px; font-size: 32px; line-height: 1; }
+#blogtitle img { width: 80px; height: 80px; object-fit: contain; }
+#tagline { margin-top: 8px; }
+
+/* Two columns, stacking on narrow screens */
+#layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 20%;
+  gap: 4%;
+  padding: 0 1%;
+}
+@media (max-width: 800px) {
+  #layout { grid-template-columns: minmax(0, 1fr); }
+}
+
+/* Main column */
+#main a { color: var(--green); }
+.archive-title { margin-top: 0; }
+article.post, article.page { padding-bottom: 96px; }
+article h3 { margin: 0 0 16px; }
+.date { text-align: right; padding-top: 16px; }
+.content { text-align: left; padding: 10px 0; }
+.content a:hover, .box a:hover, .info a:hover { text-decoration: underline; }
+.content blockquote { margin-left: 0; padding-left: 16px; border-left: 1px solid var(--rule); }
+.content pre { overflow-x: auto; }
+.content hr { border: none; border-top: 1px solid var(--rule); }
+.info { margin-bottom: 10px; }
+.meta { padding: 4px 0; }
+#navlink { text-align: center; padding-bottom: 20px; }
+#navlink .pagination { display: flex; justify-content: center; gap: 32px; }
+
+/* Sidebar */
+#sidebar a { color: var(--fg); }
+.box { margin-bottom: 24px; }
+.box h4 { margin: 0 0 4px; }
+.box ul { margin: 0; padding: 0; list-style: none; }
+.box .nav-current a { color: var(--green); }
+
+/* Forms (comments, sign-in) */
+input, textarea, select, button {
+  font: inherit;
+  padding: 4px;
+  background: rgb(20, 20, 20);
+  color: var(--fg);
+  border: 1px solid rgb(120, 120, 120);
+}
+
+/* Ghost editor cards: required class names */
+.kg-width-wide { margin-left: -5%; margin-right: -5%; }
+.kg-width-full { margin-left: calc(50% - 50vw); margin-right: calc(50% - 50vw); }
+.kg-width-wide img, .kg-width-full img { width: 100%; }
+.kg-image-card figcaption, .kg-embed-card figcaption { text-align: center; color: var(--rule); }
+
+#footer { text-align: center; }

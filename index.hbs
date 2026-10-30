@@ -1,0 +1,10 @@
+{{!< default}}
+{{!-- Front page, tag and author listings: full posts, like the old theme. --}}
+
+{{#is "tag"}}{{#tag}}<h1 class="archive-title">Tag : {{name}}</h1>{{/tag}}{{/is}}
+
+{{#foreach posts}}
+  {{> "post-body"}}
+{{/foreach}}
+
+<nav id="navlink">{{pagination}}</nav>
