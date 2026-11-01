@@ -28,3 +28,11 @@ Then paste the printed `@font-face` rules over the ones at the top of `assets/cs
 - **Theme:** GPL-2.0-or-later.
 - **ETL fonts:** freely usable (GNU intlfonts).
 - **Unifont:** SIL OFL 1.1, or GPL-2.0-or-later with the font embedding exception.
+
+## Cut
+
+To show only the start of a post on the front page and tag pages, add an HTML card containing:
+
+    <hr id="cut">
+
+Everything after it is hidden behind a "Read more..." link, which jumps to that point in the full post. Posts without a cut are shown in full.

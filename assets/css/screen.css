@@ -105,6 +105,13 @@ article h3 { margin: 0 0 16px; }
 .content pre { overflow-x: auto; }
 .content hr { border: none; border-top: 1px solid var(--rule); }
 .info { margin-bottom: 10px; }
+
+/* Cut: an HTML card containing <hr class="cut"> (or id="cut").
+   On listing pages everything after it is hidden behind "Read more...". */
+.cut, #cut { border: none; margin: 0; height: 0; }
+.is-listing .cut ~ *, .is-listing #cut ~ * { display: none; }
+.read-more { display: none; text-align: right; }
+.is-listing:has(.cut, #cut) + .read-more { display: block; }
 .meta { padding: 4px 0; }
 #navlink { text-align: center; padding-bottom: 20px; }
 #navlink .pagination { display: flex; justify-content: center; gap: 32px; }

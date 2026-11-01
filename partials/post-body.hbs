@@ -7,9 +7,10 @@
   {{/if}}
   {{#unless page}}<div class="date"><time datetime="{{date format="YYYY-MM-DD"}}">{{date format="YYYY.MM.DD"}}</time></div>{{/unless}}
 
-  <div class="content gh-content">
+  <div class="content gh-content{{#unless single}} is-listing{{/unless}}">
     {{content}}
   </div>
+  {{#unless single}}<a class="read-more" href="{{url}}#cut">Read more...</a>{{/unless}}
 
   <div class="info">
     {{#if tags}}<div class="meta">Tags : {{tags separator="&nbsp;&nbsp;"}}</div>{{/if}}
