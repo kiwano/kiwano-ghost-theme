@@ -96,9 +96,10 @@ img { max-width: 100%; height: auto; }
   #layout { grid-template-columns: minmax(0, 1fr); padding: 0 1%; }
 }
 
-/* Images in posts: 400px wide, clickable for the full size (see default.hbs).
-   Wide/full-width cards and galleries keep their own sizes. */
-.content img { max-width: min(100%, 400px); }
+/* Images in posts: centred, at most 70% of the column, clickable for the
+   full size (see default.hbs). Wide/full-width cards and galleries keep
+   their own sizes. */
+.content img { display: block; margin: 0 auto; max-width: 70%; }
 .content .kg-width-wide img, .content .kg-width-full img, .content .kg-gallery-card img { max-width: 100%; }
 .content a.full-image { cursor: zoom-in; }
 

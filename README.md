@@ -14,7 +14,7 @@ See [Cut](#cut) below for details.
 
 ## Images
 
-Images in posts are shown at most 400px wide and link to the full-size original. Wide, full-width and gallery images keep their sizes. An image you've linked yourself keeps your link.
+Images in posts are centred, at most 70% of the column width, and link to the full-size original. Wide, full-width and gallery images keep their sizes. An image you've linked yourself keeps your link.
 
 ## Fonts
 
