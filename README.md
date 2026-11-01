@@ -2,6 +2,20 @@
 
 A Ghost theme ported from the 2009 kiwano WordPress theme: black background, grey text, green headings and links, and a right-hand sidebar.
 
+## Quick reference: cut
+
+In the Ghost editor, type `/html` to add an HTML card where the cut should go, and paste:
+
+```html
+<hr id="cut">
+```
+
+See [Cut](#cut-1) below for details.
+
+## Images
+
+Images in posts are shown at most 400px wide and link to the full-size original. Wide, full-width and gallery images keep their sizes. An image you've linked yourself keeps your link.
+
 ## Fonts
 
 - **ETL Fixed 16** (Latin-1 and Latin-2, from GNU intlfonts) loads first and is only 5 KB.
