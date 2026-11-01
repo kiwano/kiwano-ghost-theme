@@ -86,12 +86,21 @@ img { max-width: 100%; height: auto; }
 #layout {
   display: grid;
   grid-template-columns: minmax(0, 1fr) 20%;
-  gap: 4%;
-  padding: 0 1%;
+  gap: 8%;
+  padding: 0 3%;
+}
+@media (min-width: 801px) {
+  body { padding: 0 48px; }
 }
 @media (max-width: 800px) {
-  #layout { grid-template-columns: minmax(0, 1fr); }
+  #layout { grid-template-columns: minmax(0, 1fr); padding: 0 1%; }
 }
+
+/* Images in posts: 400px wide, clickable for the full size (see default.hbs).
+   Wide/full-width cards and galleries keep their own sizes. */
+.content img { max-width: min(100%, 400px); }
+.content .kg-width-wide img, .content .kg-width-full img, .content .kg-gallery-card img { max-width: 100%; }
+.content a.full-image { cursor: zoom-in; }
 
 /* Main column */
 #main a { color: var(--green); }

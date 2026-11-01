@@ -76,6 +76,18 @@
 
   <footer id="footer"></footer>
 
+  <script>
+    // Link each post image to its full-size original, unless it's already a link.
+    document.querySelectorAll('.content img').forEach(function (img) {
+      if (img.closest('a, .kg-gallery-card, .kg-width-wide, .kg-width-full')) return;
+      var link = document.createElement('a');
+      link.className = 'full-image';
+      // Ghost serves resized copies under /size/wNNN/; the original lives without it.
+      link.href = img.getAttribute('src').replace(/\/size\/w\d+\//, '/');
+      img.parentNode.insertBefore(link, img);
+      link.appendChild(img);
+    });
+  </script>
   {{ghost_foot}}
 </body>
 </html>
