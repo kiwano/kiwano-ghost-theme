@@ -10,7 +10,7 @@ In the Ghost editor, type `/html` to add an HTML card where the cut should go, a
 <hr id="cut">
 ```
 
-See [Cut](#cut-1) below for details.
+See [Cut](#cut) below for details.
 
 ## Images
 
